@@ -1,7 +1,19 @@
+body{
+    background-color:#20b2aa
+}
+
 h1{
     color: red;
 }
 .completed{
     color: gray;
     text-decoration: line-through;
+}
+
+.item{
+    margin-bottom: 1rem;
+}
+
+.item:hover{
+
 }

@@ -18,7 +18,12 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="left-container">
+
+    </div>
+    <div class="main-container">
     <h1>Todo List: </h1>
+    <div class="list-container">
     <ul class="todoItems">
     <% for(let i=0; i < items.length; i++) {%>
         <li class="item">
@@ -31,11 +36,11 @@
         </li>
     <% } %>
     </ul>
-
+    </div>
     <h2>Left to do: <%= left %></h2>
 
     <h2>Add A Todo:</h2>
-
+    </div>
     <form action="/addTodo" method="POST">
         <input type="text" placeholder="Thing To Do" name="todoItem">
         <input type="submit">
