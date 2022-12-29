@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = 2121
-require('dotenv').config()
+require('dotenv').config() //allows me to use .env file
 
-
+//connection to mongodb database
 let db,
     dbConnectionStr = process.env.DB_STRING,
     dbName = 'todo'
@@ -14,11 +14,12 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
         console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
     })
-    
-app.set('view engine', 'ejs')
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+
+//Middleware
+app.set('view engine', 'ejs') //ejs  as templateing language
+app.use(express.static('public')) //static files are stored in public folder
+app.use(express.urlencoded({ extended: true })) //allows me to look at requests and pull data out
+app.use(express.json()) //
 
 
 app.get('/',async (request, response)=>{
